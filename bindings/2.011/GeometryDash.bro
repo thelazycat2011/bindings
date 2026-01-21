@@ -2781,6 +2781,7 @@ class GameManager {
 
 [[link(android)]]
 class PremiumPopup : public CCNode {
+
 }
 
 [[link(android)]]
