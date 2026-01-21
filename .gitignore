@@ -8,3 +8,5 @@ __membercall.xml
 /.vs
 **/.cache
 .idea/
+test/gd20
+ignorant_Codegen
