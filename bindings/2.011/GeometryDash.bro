@@ -2780,7 +2780,7 @@ class GameManager {
 }
 
 [[link(android)]]
-class PremiumPopup : ocos2d::CCNode {
+class PremiumPopup : cocos2d::CCNode {
 
 }
 
