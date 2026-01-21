@@ -5705,7 +5705,7 @@ class MenuGameLayer {
     virtual TodoReturn registerWithTouchDispatcher();
 }
 
-[[link(android)]]
+[[link(win, android)]]
 class MenuLayer {
     // virtual ~MenuLayer();
 
@@ -6048,18 +6048,18 @@ class OBB2D {
     TodoReturn overlaps1Way(OBB2D*);
 }
 
-[[link(android)]]
-class ObjectDecoder {
-    // virtual ~ObjectDecoder();
+// [[link(android)]]
+// class ObjectDecoder {
+//     // virtual ~ObjectDecoder();
 
-    static ObjectDecoder* sharedDecoder();
+//    static ObjectDecoder* sharedDecoder();
 
-    TodoReturn getDecodedObject(int, DS_Dictionary*);
-    TodoReturn getDelegate();
+//    TodoReturn getDecodedObject(int, DS_Dictionary*);
+//    TodoReturn getDelegate();
 
-    virtual bool init();
-    virtual void setDelegate(ObjectDecoderDelegate*);
-}
+//    virtual bool init();
+//    virtual void setDelegate(ObjectDecoderDelegate*);
+//}
 
 [[link(android)]]
 class ObjectDecoderDelegate {
