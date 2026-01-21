@@ -6506,7 +6506,7 @@ class PlayerObject : GameObject {
     bool _0x45d;
     bool _0x45e;
     bool _0x45f; // hitGround
-    bool m_placedCheckpoint
+    bool m_placedCheckpoint;
     PAD = android 0x8;
     double _0x468;
     double _0x470;
