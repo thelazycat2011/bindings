@@ -5722,7 +5722,7 @@ class MenuLayer {
     void onMoreGames(cocos2d::CCObject* sender);
     void onMyProfile(cocos2d::CCObject* sender);
     void onNewgrounds(cocos2d::CCObject* sender);
-    void onOptions(cocos2d::CCObject* sender);
+    void onOptions(cocos2d::CCObject* sender) = win 0x11e4a0;
     TodoReturn onOptionsInstant();
     void onPlay(cocos2d::CCObject* sender);
     void onQuit(cocos2d::CCObject* sender);
@@ -5740,7 +5740,7 @@ class MenuLayer {
     TodoReturn updateUserProfileButton();
     TodoReturn willClose();
 
-    virtual bool init();
+    virtual bool init() = win 0x11cf60;
     virtual TodoReturn keyBackClicked();
     virtual TodoReturn keyDown(cocos2d::enumKeyCodes);
     virtual TodoReturn googlePlaySignedIn();
