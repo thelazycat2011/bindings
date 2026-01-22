@@ -88,7 +88,7 @@ class AccountLoginLayer {
     virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn loginAccountFinished(int, int);
     virtual TodoReturn loginAccountFailed(AccountError);
 }
@@ -122,7 +122,7 @@ class AccountRegisterLayer {
     virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
     virtual TodoReturn allowTextInput(CCTextInputNode*);
@@ -1018,7 +1018,7 @@ class CCTextInputNode {
     virtual void ccTouchEnded(cocos2d::CCTouch*, cocos2d::CCEvent*);
     virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*);
     virtual void registerWithTouchDispatcher();
-    virtual TodoReturn textChanged();
+    virtual void textChanged();
     virtual TodoReturn onClickTrackNode(bool);
     virtual TodoReturn keyboardWillShow(cocos2d::CCIMEKeyboardNotificationInfo&);
     virtual TodoReturn keyboardWillHide(cocos2d::CCIMEKeyboardNotificationInfo&);
@@ -1223,7 +1223,7 @@ class ColorSelectPopup {
     virtual TodoReturn show();
     virtual TodoReturn colorValueChanged(cocos2d::ccColor3B);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn colorSelectClosed(GJSpecialColorSelect*, int);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
@@ -1381,7 +1381,7 @@ class CustomizeObjectLayer {
     virtual void keyBackClicked();
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn hsvPopupClosed(HSVWidgetPopup*, cocos2d::ccHSVValue);
     virtual TodoReturn colorSelectClosed(ColorSelectPopup*);
     virtual TodoReturn colorSetupClosed(int);
@@ -1434,7 +1434,7 @@ class CustomSongLayer {
 
     virtual void keyBackClicked();
     virtual TodoReturn show();
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
@@ -1582,7 +1582,7 @@ class EditLevelLayer {
     virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn uploadActionFinished(int, int);
     virtual TodoReturn uploadActionFailed(int, int);
     virtual TodoReturn onClosePopup(UploadActionPopup*);
@@ -4103,7 +4103,7 @@ class GJGarageLayer {
     virtual void keyBackClicked();
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn listButtonBarSwitchedPage(ListButtonBar*, int);
     virtual void updateRate();
     virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
@@ -4296,7 +4296,7 @@ class GJMoveCommandLayer {
 
     virtual void keyBackClicked();
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
 }
@@ -4736,7 +4736,7 @@ class GJWriteMessagePopup {
     virtual void keyBackClicked();
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn uploadMessageFinished(int);
     virtual TodoReturn uploadMessageFailed(int);
     virtual TodoReturn onClosePopup(UploadActionPopup*);
@@ -5389,7 +5389,7 @@ class LevelSearchLayer {
     virtual void keyBackClicked();
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
@@ -7082,7 +7082,7 @@ class SecretLayer {
     virtual void keyBackClicked();
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
@@ -7164,7 +7164,7 @@ class SetGroupIDLayer {
 
     virtual void keyBackClicked();
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual void setNextFreeGroupID(int);
 }
 
@@ -7206,7 +7206,7 @@ class SetupObjectTogglePopup {
     virtual void keyBackClicked();
     virtual TodoReturn show();
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
 }
@@ -7238,7 +7238,7 @@ class SetupOpacityPopup {
     virtual void keyBackClicked();
     virtual TodoReturn show();
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
 }
@@ -7293,7 +7293,7 @@ class SetupPulsePopup {
     virtual TodoReturn colorValueChanged(cocos2d::ccColor3B);
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn colorSelectClosed(GJSpecialColorSelect*, int);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
@@ -7318,7 +7318,7 @@ class SetupSpawnPopup {
     virtual void keyBackClicked();
     virtual TodoReturn show();
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
     virtual TodoReturn textInputReturn(CCTextInputNode*);
 }
@@ -7346,7 +7346,7 @@ class ShareCommentLayer {
     virtual void keyBackClicked();
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn uploadActionFinished(int, int);
     virtual TodoReturn uploadActionFailed(int, int);
     virtual TodoReturn onClosePopup(UploadActionPopup*);
@@ -7963,7 +7963,7 @@ class TextArea {
 
 [[link(android)]]
 class TextInputDelegate {
-    virtual TodoReturn textChanged(CCTextInputNode*);
+    virtual void textChanged(CCTextInputNode*);
     virtual TodoReturn textInputOpened(CCTextInputNode*);
     virtual TodoReturn textInputClosed(CCTextInputNode*);
     virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
