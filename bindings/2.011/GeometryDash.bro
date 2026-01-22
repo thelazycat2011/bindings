@@ -2052,6 +2052,7 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn show();
 
+public:
 	cocos2d::CCMenu* m_buttonMenu;
 	PAD = android 0x4;
 	FLAlertLayerProtocol* m_pParent;
@@ -8096,4 +8097,29 @@ class VideoOptionsLayer {
 
 	virtual bool init();
 	virtual void keyBackClicked();
+}
+
+[[link(android)]]
+class GameObjectClass {
+
+}
+
+[[link(android)]]
+class GhostTrailDelegate {
+
+}
+
+[[link(android)]]
+class GJFriendStatus {
+
+}
+
+[[link(android)]]
+class PremiumPopup {
+
+}
+
+[[link(android)]]
+class SlideInLayerDelegate {
+
 }
