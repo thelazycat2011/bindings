@@ -457,7 +457,7 @@ class BoomScrollLayer : cocos2d::CCLayer {
     cocos2d::CCArray* m_pages;
     double _0x148;
     cocos2d::CCPoint _0x150;
-    ExtendedLayer* m_internalLayer;
+    ExtendedLayer* m_mainLayer; // geode compile
     cocos2d::CCRect m_scrollArea;
     float m_minTouchSpeed;
     float m_touchSpeedFast;
@@ -2061,12 +2061,12 @@ class FLAlertLayer : cocos2d::CCLayerColor {
     virtual void setBtn1(ButtonSprite*);
     virtual void setBtn2(ButtonSprite*);
 
-    cocos2d::CCMenu* m_menu;
+    cocos2d::CCMenu* m_buttonMenu;
     PAD = android 0x4;
     FLAlertLayerProtocol* m_pParent;
     cocos2d::CCNode* m_targetScene;
     bool m_reverseKeyBack;
-    cocos2d::CCLayer* m_internalLayer;
+    cocos2d::CCLayer* m_mainLayer; // Geode compile
     int m_zValue;
     bool m_showInstant;
     ButtonSprite* m_btn1;
