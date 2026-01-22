@@ -2052,7 +2052,6 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn show();
 
-public:
 	cocos2d::CCMenu* m_buttonMenu;
 	PAD = android 0x4;
 	FLAlertLayerProtocol* m_pParent;
