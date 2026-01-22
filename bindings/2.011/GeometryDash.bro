@@ -797,7 +797,7 @@ class CCMenuItemSpriteExtra : cocos2d::CCMenuItemSprite {
 }
 
 [[link(android)]]
-class CCMenuItemToggler : CCMenuItem {
+class CCMenuItemToggler : cocos2d::CCMenuItem {
 	// virtual ~CCMenuItemToggler();
 
 	static CCMenuItemToggler* create(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler);
