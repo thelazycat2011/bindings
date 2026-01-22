@@ -329,7 +329,7 @@ class BoomListLayer {
 }
 
 [[link(android)]]
-class BoomListView {
+class BoomListView : cocos2d::CCLayer {
 	// virtual ~BoomListView();
 
 	static BoomListView* create(cocos2d::CCArray*, float, float, int, BoomListType);
@@ -348,10 +348,18 @@ class BoomListView {
 	virtual TodoReturn TableViewWillReloadCellForRowAtIndexPath(CCIndexPath&, TableViewCell*, TableView*);
 	virtual TodoReturn getListCell(char const*);
 	virtual TodoReturn loadCell(TableViewCell*, int);
+
+	TableView* m_tableView;
+	cocos2d::CCArray* m_cells;
+	BoomListType m_type;
+	float m_height;
+	float m_width;
+	float _0x134;
+	int _0x138;
 }
 
 [[link(android)]]
-class BoomScrollLayer {
+class BoomScrollLayer : cocos2d::CCLayer {
 	// virtual ~BoomScrollLayer();
 	// BoomScrollLayer();
 
@@ -422,6 +430,39 @@ class BoomScrollLayer {
 	virtual void ccTouchEnded(cocos2d::CCTouch*, cocos2d::CCEvent*);
 	virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*);
 	virtual void registerWithTouchDispatcher();
+
+	cocos2d::CCArray* m_pageIndicators;
+	int m_lastScreen;
+	float _0x120;
+	float _0x124;
+	bool m_looped;
+	DynamicScrollDelegate* m_dynamicScrollDelegate;
+	cocos2d::CCArray* m_objects;
+	bool m_dynamicScrolling;
+	int _0x138;
+	bool _0x13c;
+	cocos2d::CCTouch* m_touch;
+	cocos2d::CCArray* m_pages;
+	double _0x148;
+	cocos2d::CCPoint _0x150;
+	ExtendedLayer* m_mainLayer; // geode compile
+	cocos2d::CCRect m_scrollArea;
+	float m_minTouchSpeed;
+	float m_touchSpeedFast;
+	float m_touchSpeedMid;
+	BoomScrollLayerDelegate* m_delegate;
+	bool m_movingToPage;
+	bool m_onlyShowOnePage;
+	float m_minimumTouchLengthToSlide;
+	float m_minimumTouchLengthToChangePage;
+	float m_marginOffset;
+	bool m_stealTouches;
+	bool m_showPagesIndicator;
+	cocos2d::CCPoint m_pagesIndicatorPosition;
+	cocos2d::ccColor4B m_pagesIndicatorSelectedColor;
+	cocos2d::ccColor4B m_pagesIndicatorNormalColor;
+	int m_currentScreen;
+	float m_pagesWidthOffset;
 }
 
 [[link(android)]]
@@ -468,7 +509,7 @@ class ButtonSprite {
 }
 
 [[link(android)]]
-class CCAlertCircle {
+class CCAlertCircle : cocos2d::CCNode {
 	// virtual ~CCAlertCircle();
 
 	static CCAlertCircle* create();
@@ -477,10 +518,12 @@ class CCAlertCircle {
 
 	virtual bool init();
 	virtual void draw();
+
+	CCAlertCircle* m_circle;
 }
 
 [[link(android)]]
-class CCAnimatedSprite {
+class CCAnimatedSprite : cocos2d::CCSprite {
 	// virtual ~CCAnimatedSprite();
 
 	TodoReturn cleanupSprite();
@@ -511,10 +554,20 @@ class CCAnimatedSprite {
 	virtual void setOpacity(unsigned char);
 	virtual TodoReturn animationFinished(char const*);
 	virtual TodoReturn animationFinishedO(cocos2d::CCObject*);
+
+	gd::string m_type;
+	gd::string m_activeTween;
+	SpriteAnimationManager* m_spriteAnimationManager;
+	cocos2d::CCSprite* m_sprite;
+	cocos2d::CCSprite* m_normalSprite;
+	CCPartAnimSprite* m_animatedSprite;
+	spriteMode m_activeSpriteMode;
+	gd::string m_defaultAnimation;
+	AnimatedSpriteDelegate* m_delegate;
 }
 
 [[link(android)]]
-class CCAnimateFrameCache {
+class CCAnimateFrameCache : cocos2d::CCObject {
 	// virtual ~CCAnimateFrameCache();
 
 	static CCAnimateFrameCache* sharedSpriteFrameCache();
@@ -527,10 +580,14 @@ class CCAnimateFrameCache {
 	TodoReturn purgeSharedSpriteFrameCache();
 	TodoReturn removeSpriteFrames();
 	TodoReturn spriteFrameByName(char const*);
+
+	cocos2d::CCDictionary* m_animationContainer;
+	cocos2d::CCDictionary* _0x1c;
+	cocos2d::CCDictionary* m_animDescDict;
 }
 
 [[link(android)]]
-class CCBlockLayer {
+class CCBlockLayer : cocos2d::CCLayerColor {
 	// virtual ~CCBlockLayer();
 
 	static CCBlockLayer* create();
@@ -556,6 +613,9 @@ class CCBlockLayer {
 	virtual TodoReturn enterAnimFinished();
 	virtual TodoReturn disableUI();
 	virtual TodoReturn enableUI();
+
+	bool m_removeOnExit;
+	bool _0x195; // Game checks this before calling decrementForcePrio
 }
 
 [[link(android)]]
@@ -703,7 +763,7 @@ class CCLightStrip {
 }
 
 [[link(android)]]
-class CCMenuItemSpriteExtra {
+class CCMenuItemSpriteExtra : cocos2d::CCMenuItemSprite {
 	// virtual ~CCMenuItemSpriteExtra();
 	// CCMenuItemSpriteExtra();
 
@@ -727,6 +787,13 @@ class CCMenuItemSpriteExtra {
 	virtual void activate();
 	virtual void selected();
 	virtual void unselected();
+
+	float m_scaleVar;
+	float m_originalScale;
+	bool m_shouldAnimate;
+	bool m_darkenClick;
+	float m_volume;
+	gd::string m_clickSound;
 }
 
 [[link(android)]]
@@ -875,7 +942,7 @@ class CCSpritePart {
 }
 
 [[link(android)]]
-class CCSpritePlus {
+class CCSpritePlus : cocos2d::CCSprite {
 	// virtual ~CCSpritePlus();
 
 	TodoReturn addFollower(cocos2d::CCNode*);
@@ -896,6 +963,11 @@ class CCSpritePlus {
 	virtual bool initWithSpriteFrameName(char const*);
 	virtual void setFlipX(bool);
 	virtual void setFlipY(bool);
+
+	cocos2d::CCArray* m_followers;
+	CCSpritePlus* m_target;
+	bool m_hasFollowers;
+	bool m_followScale;
 }
 
 [[link(android)]]
@@ -1943,7 +2015,7 @@ class FileSaveManager {
 }
 
 [[link(android)]]
-class FLAlertLayer {
+class FLAlertLayer : cocos2d::CCLayerColor {
 	// virtual ~FLAlertLayer();
 	// FLAlertLayer();
 
@@ -1979,6 +2051,21 @@ class FLAlertLayer {
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn show();
+
+	cocos2d::CCMenu* m_buttonMenu;
+	PAD = android 0x4;
+	FLAlertLayerProtocol* m_pParent;
+	cocos2d::CCNode* m_targetScene;
+	bool m_reverseKeyBack;
+	cocos2d::CCLayer* m_mainLayer; // Geode compile
+	int m_zValue;
+	bool m_showInstant;
+	ButtonSprite* m_btn1;
+	ButtonSprite* m_btn2;
+	ScrollingLayer* m_scrollingLayer;
+	PAD = android 0x4;
+	bool _0x1c4;
+	bool _0x1c5;
 }
 
 [[link(android)]]
@@ -2683,7 +2770,7 @@ class GameManager {
 }
 
 [[link(android)]]
-class GameObject {
+class GameObject : CCSpritePlus {
 	// virtual ~GameObject();
 	// GameObject();
 
@@ -3011,6 +3098,154 @@ class GameObject {
 	virtual void setObjectRectDirty(bool);
 	virtual void setOrientedRectDirty(bool);
 	virtual void setType(GameObjectType);
+
+	cocos2d::ccColor3B _0x1c2; // Default color?
+	float _0x1c8; // updateSyncedAnimation
+	float _0x1cc; // updateSyncedAnimation
+	float _0x1d0; // updateSyncedAnimation
+	float _0x1d4; // updateSyncedAnimation
+	bool _0x1d8; // resetObject
+	float _0x1dc; // updateSyncedAnimation
+	bool _0x1e0; // addCustomBlackChild
+	bool _0x1e1; // Unused
+	float _0x1e4; // addCustomBlackChild
+	bool m_editMode;
+	bool m_groupDisabled;
+	bool m_lockColorAsChild;
+	int m_savedMainColorMode;
+	int m_savedSecondaryColorMode;
+	bool _0x1f4; // Main color enable HSV?
+	bool _0x1f5; // Secondary color enable HSV?
+	float m_tempOffsetX;
+	float m_tempOffsetY;
+	bool _0x200; // Related to temp offset
+	bool m_flipX;
+	bool m_flipY;
+	cocos2d::CCPoint m_rectOffset;
+	bool _0x20c; // Rect offset related
+	cocos2d::CCPoint _0x210; // Rect offset related
+	OBB2D* m_orientedBox;
+	bool m_isOriented;
+	cocos2d::CCSprite* m_glowSprite;
+	bool _0x224;
+	cocos2d::CCAction* m_myAction;
+	bool _0x22c;
+	bool _0x22d;
+	bool _0x22e;
+	float _0x230; // Width?
+	float _0x234; // Height?
+	bool _0x238;
+	bool _0x239;
+	bool _0x23a;
+	cocos2d::CCParticleSystemQuad* m_particle;
+	gd::string m_particleKey;
+	bool m_hasParticle;
+	cocos2d::CCPoint _0x248;
+	cocos2d::CCRect _0x250;
+	bool _0x260;
+	float m_fadeInPosOffset;
+	cocos2d::CCRect _0x268;
+	bool m_objectRectDirty;
+	bool m_orientedRectDirty;
+	bool _0x27a;
+	bool _0x27b;
+	bool _0x27c;
+	bool _0x27d;
+	bool _0x27e;
+	bool m_mainColorBlack;
+	bool m_secondaryColorBlack;
+	bool m_mainBlend;
+	bool m_secondaryBlend;
+	bool m_hasCustomChildren;
+	bool m_isAnimated;
+	cocos2d::CCSprite* m_colorSprite;
+	bool m_ignoreScreenCheck;
+	float m_radius;
+	bool m_isRotated;
+	float m_scaleModX;
+	float m_scaleModY;
+	int m_M_ID;
+	GameObjectType m_type;
+	int m_sectionIdx;
+	bool m_touchTriggered;
+	bool m_spawnedByTrigger;
+	cocos2d::CCPoint m_startPos;
+	gd::string m_frame;
+	bool m_useAudioScale;
+	bool _0x2bd;
+	float m_startRotation;
+	float m_startScaleX;
+	float m_startScaleY;
+	bool m_startFlipX;
+	bool m_startFilpY;
+	bool m_shouldHide;
+	float m_spawnXPos;
+	bool m_isInvisible;
+	float m_enterAngle;
+	int m_enterEffect;
+	int m_customColorIdx;
+	float m_customScale;
+	int m_objectKey;
+	bool m_dontTransform;
+	bool m_dontFade;
+	bool m_dontApplyEnter;
+	bool m_dontApplyFade;
+	bool m_dontFadeTinted;
+	bool m_isTintObject;
+	bool m_isDetailColorObject;
+	bool m_customDontEnter;
+	bool m_customDontFade;
+	bool m_stateVar;
+	int m_objectZ;
+	bool m_addToBatch2;
+	bool m_colorOnTop;
+	bool m_customAudioScale;
+	float m_minAudioScale;
+	float m_maxAudioScale;
+	int m_uniqueID;
+	int m_objectID;
+	bool m_invisibleMode;
+	bool m_glowUseBGColor;
+	bool m_useSpecialLight;
+	float m_glowOpacityMod;
+	bool m_upSlope;
+	int m_slopeType;
+	float m_slopeAngle;
+	bool m_damaging;
+	GJSpriteColor* m_mainColor;
+	GJSpriteColor* m_secondaryColor;
+	bool m_addedToBlend;
+	int m_zLayer;
+	int m_customZLayer;
+	int m_customObjectZ;
+	gd::string m_textBlockString;
+	bool m_editorSelected;
+	bool m_wasSelected;
+	bool m_isSelected;
+	int m_editorSelectIdx;
+	cocos2d::CCPoint m_storedPosition;
+	bool m_needsReorder;
+	bool m_needsUpdateColor;
+	float m_editorCustomScale;
+	int* m_groups;
+	int m_groupCount;
+	int m_editorLayerID;
+	int m_editorLayerID2;
+	int m_groupDisabledCount;
+	bool m_groupUpdated;
+	bool m_useCustomContentSize;
+	bool m_useCustomEditorHitbox;
+	cocos2d::CCSize m_customHitBox;
+	cocos2d::CCPoint m_lastPosition;
+	bool m_didUpdateLastPosition;
+	bool m_updateLastPos;
+	int idk; //m_objectClass
+	bool m_hasSyncedAnimation;
+	bool m_isTriggerSaved;
+	int _0x394; // Animation related
+	ColorActionSprite* _0x398;
+	ColorActionSprite* _0x39c;
+	GJEffectManager* m_effectManager;
 }
 
 [[link(android)]]
@@ -6003,7 +6238,7 @@ class PlayerCheckpoint {
 }
 
 [[link(android)]]
-class PlayerObject {
+class PlayerObject : GameObject {
 	// virtual ~PlayerObject();
 	// PlayerObject();
 
@@ -6189,6 +6424,131 @@ class PlayerObject {
 	virtual TodoReturn getRealPosition();
 	virtual TodoReturn getOrientedBox();
 	virtual TodoReturn animationFinished(char const*);
+
+	double _0x3a8; // getModifiedSlopeYVel
+	bool _0x3b0; // hitGround, placeStreakPoint
+	cocos2d::CCNode* _0x3b4;
+	cocos2d::CCDictionary* m_topBlockIDs;
+	cocos2d::CCDictionary* m_bottomBlockIDs;
+	GameObject* m_lastSlopeObject;
+	GameObject* m_backupGroundObject;
+	GameObject* m_lastGroundObject;
+	int m_currentIcon;
+	float _0x3d0; // postCollision
+	float _0x3d4; // postCollision
+	bool m_didStick;
+	int m_bottomBlockID;
+	int m_topBlockID;
+	bool _0x3e4; // hitGround
+	bool m_shouldDisconnectSlope;
+	GameObject* m_preSlopeObject;
+	GameObject* m_slopeObject;
+	float _0x3f0;
+	int m_lastSlopeID;
+	bool _0x3f8; // isBoostValid
+	cocos2d::CCArray* _0x3fc;
+	PAD = android 0x8;
+	GhostType m_ghostType;
+	GhostTrailEffect* m_ghostTrail;
+	cocos2d::CCSprite* _0x410;
+	cocos2d::CCSprite* _0x414;
+	cocos2d::CCSprite* _0x418;
+	cocos2d::CCSprite* _0x41c;
+	cocos2d::CCSprite* _0x420;
+	cocos2d::CCSprite* _0x424;
+	cocos2d::CCSprite* _0x428;
+	cocos2d::CCSprite* _0x42c;
+	cocos2d::CCMotionStreak* _0x430;
+	HardStreak* m_hardStreak;
+	double m_playerXVelocity;
+	double m_jumpHeight;
+	double m_gravity;
+	float _0x450;
+	float _0x454; // isSafeMode
+	bool _0x458; // flipGravity, placeStreakPoint
+	bool _0x459;
+	bool _0x45a; // m_isRising
+	bool _0x45b; // inPlayLayer
+	bool _0x45c;
+	bool _0x45d;
+	bool _0x45e;
+	bool _0x45f; // hitGround
+	bool m_placedCheckpoint;
+	PAD = android 0x8;
+	double _0x468;
+	double _0x470;
+	double _0x478; // isSafeFlip
+	PAD = android 0x4;
+	float _0x484;
+	PAD = android 0x8;
+	double _0x490;
+	GameObject* _0x498;
+	CheckpointObject* _0x49c;
+	int _0x4a0; // Timer for checkpoints
+	GJRobotSprite* m_robotSprite;
+	bool _0x4a8; // specialGroundHit
+	cocos2d::CCParticleSystemQuad* _0x4ac;
+	cocos2d::CCParticleSystemQuad* _0x4b0;
+	cocos2d::CCParticleSystemQuad* _0x4b4;
+	cocos2d::CCParticleSystemQuad* _0x4b8;
+	cocos2d::CCParticleSystemQuad* _0x4bc;
+	cocos2d::CCParticleSystemQuad* _0x4c0;
+	bool _0x4c4;
+	cocos2d::CCParticleSystemQuad* _0x4c8; // hitGround
+	cocos2d::CCParticleSystemQuad* _0x4cc; // hitGround
+	PAD = android 0xc;
+	float m_targetSlopeAngle;
+	float m_lastSlopeYVelocity;
+	float _0x4e4;
+	PAD = android 0x2;
+	bool _0x4ea;
+	bool m_lastSlopeFloorTop;
+	float m_collideTop;
+	float m_collideBottom;
+	bool m_enableStreak;
+	bool m_checkpointQueued;
+	bool m_tookDamage;
+	bool m_upKeyDown;
+	bool m_upKeyPressed;
+	bool _0x4f9;
+	bool _0x4fa;
+	PAD = android 0x5;
+	double m_yVelocity;
+	bool m_onSlope;
+	bool m_wasOnSlope;
+	float m_slopeYVel;
+	bool m_flyMode;
+	bool m_birdMode;
+	bool m_rollMode;
+	bool m_dartMode;
+	bool m_robotMode;
+	bool m_gravityFlipped;
+	bool m_isDead;
+	bool m_canJump;
+	float m_playerScale;
+	float m_timeMod;
+	cocos2d::CCPoint m_lastP;
+	cocos2d::CCPoint m_portalP;
+	cocos2d::CCLayer* m_gameLayer;
+	bool m_onGround;
+	bool m_isJumping;
+	bool m_isLocked;
+	cocos2d::CCPoint m_lastGroundPos;
+	RingObject* m_touchedRing;
+	GameObject* m_portalObject;
+	bool m_hasJumped;
+	bool m_hasRingJumped;
+	cocos2d::ccColor3B m_glowColor1;
+	cocos2d::ccColor3B m_glowColor2;
+	cocos2d::CCPoint m_realPlayerPos;
+	bool m_isSecondPlayer;
+	bool m_dualMode;
+	PAD = android 0x6;
+	double m_clkTimer;
+	bool m_disableEffects;
+	float m_audioScale;
+	float m_groundHeight;
+	float m_lastYVel;
 }
 
 [[link(android)]]
