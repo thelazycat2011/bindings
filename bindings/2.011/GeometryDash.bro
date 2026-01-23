@@ -5297,7 +5297,7 @@ class LevelManagerDelegate {
 }
 
 [[link(android)]]
-class LevelPage {
+class LevelPage : cocos2d::CCLayer {
 	// virtual ~LevelPage();
 	// LevelPage();
 
@@ -5306,7 +5306,7 @@ class LevelPage {
 	TodoReturn addSecretCoin();
 	bool init(GJGameLevel*);
 	void onInfo(cocos2d::CCObject* sender);
-	void onPlay(cocos2d::CCObject* sender);
+	void onPlay(cocos2d::CCObject* sender) = win 0x115b10;
 	TodoReturn playCoinEffect();
 	TodoReturn playStep2();
 	TodoReturn playStep3();
