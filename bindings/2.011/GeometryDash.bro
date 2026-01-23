@@ -275,14 +275,14 @@ class AppDelegate : cocos2d::CCApplication, cocos2d::CCSceneDelegate {
 	void setScenePointer(cocos2d::CCNode*);
 	void setupGLView();
 	TodoReturn showLoadingCircle(bool, bool, bool);
-	virtual void trySaveGame();
+	virtual void trySaveGame() = win 0x392a0;
 
-	virtual bool applicationDidFinishLaunching();
-	virtual void applicationDidEnterBackground();
-	virtual void applicationWillEnterForeground();
-	virtual void applicationWillBecomeActive();
-	virtual void applicationWillResignActive();
-	virtual void willSwitchToScene(cocos2d::CCScene*);
+	virtual bool applicationDidFinishLaunching() = win 0x38870;
+	virtual void applicationDidEnterBackground() = win 0x38bc0;
+	virtual void applicationWillEnterForeground() = win 0x38db0;
+	virtual void applicationWillBecomeActive() = win 0x38b20;
+	virtual void applicationWillResignActive() = win 0x38bb0;
+	virtual void willSwitchToScene(cocos2d::CCScene*) = win 0x38610;
 
 	bool m_isGLViewSetup;
 	bool m_paused;
