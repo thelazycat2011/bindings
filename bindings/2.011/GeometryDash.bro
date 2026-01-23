@@ -1941,7 +1941,7 @@ class EffectGameObject {
 }
 
 [[link(android)]]
-class EndLevelLayer {
+class EndLevelLayer : GJDropDownLayer {
 	// virtual ~EndLevelLayer();
 	// EndLevelLayer();
 
@@ -1963,8 +1963,8 @@ class EndLevelLayer {
 
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
-	virtual TodoReturn customSetup();
-	virtual TodoReturn showLayer(bool);
+	virtual void customSetup();
+	virtual void showLayer(bool);
 	virtual TodoReturn enterAnimFinished();
 	virtual void keyUp(cocos2d::enumKeyCodes);
 }
@@ -3851,7 +3851,7 @@ class GJCommentListLayer {
 }
 
 [[link(android)]]
-class GJDropDownLayer {
+class GJDropDownLayer : cocos2d::CCLayer {
 	// virtual ~GJDropDownLayer();
 	// GJDropDownLayer();
 
@@ -6315,7 +6315,9 @@ class PlatformToolbox {
 	TodoReturn getUniqueUserID();
 	TodoReturn getUserID();
 	TodoReturn hideCursor();
-	bool isControllerConnected();
+	static bool isControllerConnected() = win inline {
+		return cocos2d::CCApplication::sharedApplication()->getControllerConnected();
+	};
 	bool isHD();
 	bool isLocalPlayerAuthenticated();
 	bool isLowMemoryDevice();
