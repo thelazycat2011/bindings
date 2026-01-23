@@ -2557,7 +2557,7 @@ class GameLevelManager {
 }
 
 [[link(android)]]
-class GameManager : GManager {
+class GameManager {
 	// virtual ~GameManager();
 	// GameManager();
 
