@@ -2022,6 +2022,10 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 	static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float, bool, float);
 	static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*, float);
 	static FLAlertLayer* create(FLAlertLayerProtocol*, char const*, gd::string, char const*, char const*);
+	static FLAlertLayer* create(char const* title, gd::string desc, char const* btn)
+	{
+		return create(nullptr, title, desc, btn, nullptr);
+	}
 
 	TodoReturn getBtn1();
 	TodoReturn getBtn2();
@@ -2050,7 +2054,7 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
-	virtual TodoReturn show();
+	virtual void show();
 
 	cocos2d::CCMenu* m_buttonMenu;
 	PAD = android 0x4;
