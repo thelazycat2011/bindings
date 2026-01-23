@@ -789,7 +789,7 @@ class CCMenuItemSpriteExtra : cocos2d::CCMenuItemSprite {
 	virtual void unselected();
 
 	float m_scaleVar;
-	float m_originalScale;
+	float m_baseScale; // m_originalScale
 	bool m_shouldAnimate;
 	bool m_darkenClick;
 	float m_volume;
