@@ -4080,7 +4080,7 @@ class GJGarageLayer : cocos2d::CCLayer {
 	TodoReturn updatePlayerName(char const*);
 	TodoReturn updatePlayerSelect(cocos2d::CCNode*);
 
-	virtual bool init();
+	virtual bool init() = win 0xcc070;
 	virtual void keyBackClicked();
 	virtual TodoReturn textInputOpened(CCTextInputNode*);
 	virtual TodoReturn textInputClosed(CCTextInputNode*);
