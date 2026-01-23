@@ -769,7 +769,7 @@ class CCMenuItemSpriteExtra : cocos2d::CCMenuItemSprite {
 
 	static CCMenuItemSpriteExtra* create(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler);
 	static CCMenuItemSpriteExtra* create(cocos2d::CCNode* p0, cocos2d::CCNode* p1, cocos2d::SEL_MenuHandler handler) {
-		return create(p0, p1, nullptr, handler)
+		return create(p0, p1, nullptr, handler);
 	}
 
 	TodoReturn getClickSound();
