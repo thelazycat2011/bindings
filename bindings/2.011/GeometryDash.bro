@@ -1560,7 +1560,7 @@ class EditButtonBar {
 }
 
 [[link(android)]]
-class EditLevelLayer {
+class EditLevelLayer : cocos2d::CCLayer {
 	// virtual ~EditLevelLayer();
 	// EditLevelLayer();
 
