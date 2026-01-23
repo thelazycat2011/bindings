@@ -768,6 +768,9 @@ class CCMenuItemSpriteExtra : cocos2d::CCMenuItemSprite {
 	// CCMenuItemSpriteExtra();
 
 	static CCMenuItemSpriteExtra* create(cocos2d::CCNode*, cocos2d::CCNode*, cocos2d::CCObject*, cocos2d::SEL_MenuHandler);
+	static CCMenuItemSpriteExtra* create(cocos2d::CCNode* p0, cocos2d::CCNode* p1, cocos2d::SEL_MenuHandler handler) {
+		return create(p0, p1, nullptr, handler)
+	}
 
 	TodoReturn getClickSound();
 	TodoReturn getDarkenClick();
@@ -5618,17 +5621,28 @@ class LoadingCircle {
 }
 
 [[link(android)]]
-class LoadingLayer {
+class LoadingLayer : cocos2d::CCLayer {
 	// virtual ~LoadingLayer();
 
 	static LoadingLayer* create(bool);
 
-	TodoReturn getLoadingString();
-	bool init(bool);
-	TodoReturn loadAssets();
-	TodoReturn loadingFinished();
-	TodoReturn scene(bool);
-	TodoReturn updateProgress(int);
+	const char* getLoadingString() = win 0x119690;
+	bool init(bool) = win 0x1187f0;
+	void loadAssets();
+	void loadingFinished();
+	void scene(bool);
+	void updateProgress(int);
+
+	bool m_unknown;
+	bool m_unknown2;
+	int m_loadStep;
+	cocos2d::CCLabelBMFont* m_caption;
+	TextArea* m_textArea;
+	cocos2d::CCSprite* m_sliderBar;
+	float m_sliderGrooveXPos;
+	float m_sliderGrooveHeight;
+	bool m_fromRefresh;
+	// educated guess, if robtop didnt change anything about LoadingLayer then it field should stay the same. if it didnt it will crash the game
 }
 
 [[link(android)]]
