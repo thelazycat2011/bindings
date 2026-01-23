@@ -244,7 +244,14 @@ class AnimatedSpriteDelegate {
 class AppDelegate : cocos2d::CCApplication, cocos2d::CCSceneDelegate {
 	// virtual ~AppDelegate();
 
-	TodoReturn bgScale();
+	float bgScale() = win inline {
+		auto ssfMax = cocos2d::CCDirector::sharedDirector()->getScreenScaleFactorMax();
+		if (!this->m_enableFPSTricks && !GameManager::sharedState()->m_performanceMode) {
+			return ssfMax;
+		}
+
+		return ssfMax * cocos2d::CCDirector::sharedDirector()->getContentScaleFactor();
+	}
 	TodoReturn checkSound();
 	static AppDelegate* get() = win inline {
 		return static_cast<AppDelegate*>(cocos2d::CCApplication::sharedApplication());
@@ -259,14 +266,14 @@ class AppDelegate : cocos2d::CCApplication, cocos2d::CCSceneDelegate {
 	TodoReturn hideLoadingCircle();
 	TodoReturn loadingIsFinished();
 	TodoReturn musicTest();
-	TodoReturn pauseGame();
-	TodoReturn platformShutdown();
+	void pauseGame();
+	void platformShutdown();
 	TodoReturn resumeSound();
 	void setIdleTimerDisabled(bool);
 	void setManagersLoaded(bool);
 	void setPaused(bool);
 	void setScenePointer(cocos2d::CCNode*);
-	TodoReturn setupGLView();
+	void setupGLView();
 	TodoReturn showLoadingCircle(bool, bool, bool);
 	virtual void trySaveGame();
 

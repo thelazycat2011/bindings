@@ -1,0 +1,7 @@
+GJGarageLayer::init - 0xcc070
+LevelPage::onPlay - 0x115b10
+LoadingLayer::getLoadingString - 0x119690
+LoadingLayer::init - 0x1187f0
+LoadingLayer::loadAssets - 0x1190c0
+MenuLayer::onMoreGames - 0x11e230
+MenuLayer::init - 0x11cf60
