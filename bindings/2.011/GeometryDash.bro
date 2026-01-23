@@ -4037,7 +4037,7 @@ class GJGameLevel {
 }
 
 [[link(android)]]
-class GJGarageLayer {
+class GJGarageLayer : cocos2d::CCLayer {
 	// virtual ~GJGarageLayer();
 	// GJGarageLayer();
 
