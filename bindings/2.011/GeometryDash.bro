@@ -484,7 +484,7 @@ class ButtonPage {
 }
 
 [[link(android)]]
-class ButtonSprite :: cocos2d::CCSprite {
+class ButtonSprite : cocos2d::CCSprite {
 	// virtual ~ButtonSprite();
 	// ButtonSprite();
 
