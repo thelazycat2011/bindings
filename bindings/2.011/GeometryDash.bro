@@ -185,7 +185,7 @@ class AchievementNotifier {
 	TodoReturn achievementDisplayFinished();
 	TodoReturn notifyAchievement(char const*, char const*, char const*);
 	TodoReturn showNextAchievement();
-	TodoReturn willSwitchToScene(cocos2d::CCScene*);
+	void willSwitchToScene(cocos2d::CCScene*);
 
 	virtual bool init();
 }
@@ -241,12 +241,14 @@ class AnimatedSpriteDelegate {
 }
 
 [[link(android)]]
-class AppDelegate {
+class AppDelegate : cocos2d::CCApplication, cocos2d::CCSceneDelegate {
 	// virtual ~AppDelegate();
 
 	TodoReturn bgScale();
 	TodoReturn checkSound();
-	TodoReturn get();
+	static AppDelegate* get() = win inline {
+		return static_cast<AppDelegate*>(cocos2d::CCApplication::sharedApplication());
+	}
 	TodoReturn getEnableFPSTricks();
 	TodoReturn getIsIOS();
 	TodoReturn getIsLowMemoryDevice();
@@ -266,14 +268,14 @@ class AppDelegate {
 	void setScenePointer(cocos2d::CCNode*);
 	TodoReturn setupGLView();
 	TodoReturn showLoadingCircle(bool, bool, bool);
-	TodoReturn trySaveGame();
+	virtual void trySaveGame();
 
 	virtual bool applicationDidFinishLaunching();
 	virtual void applicationDidEnterBackground();
 	virtual void applicationWillEnterForeground();
 	virtual void applicationWillBecomeActive();
 	virtual void applicationWillResignActive();
-	virtual TodoReturn willSwitchToScene(cocos2d::CCScene*);
+	virtual void willSwitchToScene(cocos2d::CCScene*);
 }
 
 [[link(android)]]
@@ -482,7 +484,7 @@ class ButtonPage {
 }
 
 [[link(android)]]
-class ButtonSprite {
+class ButtonSprite :: cocos2d::CCSprite {
 	// virtual ~ButtonSprite();
 	// ButtonSprite();
 
