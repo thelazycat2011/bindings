@@ -6317,7 +6317,7 @@ class PlatformToolbox {
 	TodoReturn hideCursor();
 	static bool isControllerConnected() = win inline {
 		return cocos2d::CCApplication::sharedApplication()->getControllerConnected();
-	};
+	}
 	bool isHD();
 	bool isLocalPlayerAuthenticated();
 	bool isLowMemoryDevice();
