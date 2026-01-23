@@ -3875,11 +3875,11 @@ class GJDropDownLayer : cocos2d::CCLayer {
 	virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*);
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn customSetup();
-	virtual TodoReturn enterLayer();
-	virtual TodoReturn exitLayer(cocos2d::CCObject*);
-	virtual TodoReturn showLayer(bool);
-	virtual TodoReturn hideLayer(bool);
+	virtual void customSetup();
+	virtual void enterLayer();
+	virtual void exitLayer(cocos2d::CCObject*);
+	virtual void showLayer(bool);
+	virtual void hideLayer(bool);
 	virtual TodoReturn layerVisible();
 	virtual TodoReturn layerHidden();
 	virtual TodoReturn enterAnimFinished();
