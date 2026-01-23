@@ -49,7 +49,7 @@ class AccountLayer {
 	virtual TodoReturn backupAccountFinished();
 	virtual TodoReturn syncAccountFinished();
 	virtual TodoReturn accountStatusChanged();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -75,7 +75,7 @@ class AccountLoginLayer {
 
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn textInputOpened(CCTextInputNode*);
 	virtual TodoReturn textInputClosed(CCTextInputNode*);
 	virtual void textChanged(CCTextInputNode*);
@@ -109,7 +109,7 @@ class AccountRegisterLayer {
 	virtual bool init();
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn textInputOpened(CCTextInputNode*);
 	virtual TodoReturn textInputClosed(CCTextInputNode*);
 	virtual void textChanged(CCTextInputNode*);
@@ -1240,7 +1240,7 @@ class CommentCell {
 	virtual bool init();
 	virtual void draw();
 	virtual TodoReturn likedItem(LikeItemType, int, bool);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -1287,7 +1287,7 @@ class CreateGuidelinesLayer {
 	virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*);
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual void onClose(cocos2d::CCObject* sender);
 	virtual void onInfo(cocos2d::CCObject* sender);
 	virtual void onRecord(cocos2d::CCObject* sender);
@@ -1475,7 +1475,7 @@ class CustomSongWidget {
 	virtual TodoReturn loadSongInfoFailed(int, GJSongError);
 	virtual TodoReturn downloadSongFailed(int, GJSongError);
 	virtual TodoReturn songStateChanged();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -1570,7 +1570,7 @@ class EditLevelLayer {
 
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn textInputOpened(CCTextInputNode*);
 	virtual TodoReturn textInputClosed(CCTextInputNode*);
 	virtual void textChanged(CCTextInputNode*);
@@ -1634,7 +1634,7 @@ class EditorPauseLayer {
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn customSetup();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -1804,7 +1804,7 @@ class EditorUI {
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn songStateChanged();
 	virtual void keyUp(cocos2d::enumKeyCodes);
 	virtual void scrollWheel(float, float);
@@ -2070,7 +2070,7 @@ class FLAlertLayer : cocos2d::CCLayerColor {
 
 [[link(android)]]
 class FLAlertLayerProtocol {
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -2167,7 +2167,7 @@ class FRequestProfilePage {
 
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
@@ -2203,7 +2203,7 @@ class FriendRequestPopup {
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -4084,7 +4084,7 @@ class GJGarageLayer {
 	virtual TodoReturn listButtonBarSwitchedPage(ListButtonBar*, int);
 	virtual TodoReturn showUnlockPopup(int, UnlockType);
 	virtual TodoReturn updateRate();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -4195,7 +4195,7 @@ class GJMessageCell {
 
 	virtual bool init();
 	virtual void draw();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
@@ -4222,7 +4222,7 @@ class GJMessagePopup {
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -4330,7 +4330,7 @@ class GJRequestCell {
 
 	virtual bool init();
 	virtual void draw();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
@@ -4428,7 +4428,7 @@ class GJScoreCell {
 
 	virtual bool init();
 	virtual void draw();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -4496,7 +4496,7 @@ class GJSongBrowser {
 	TodoReturn setupSongBrowser(cocos2d::CCArray*);
 
 	virtual TodoReturn customSetup();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -4563,7 +4563,7 @@ class GJUserCell {
 
 	virtual bool init();
 	virtual void draw();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
@@ -4709,7 +4709,7 @@ class GJWriteMessagePopup {
 	virtual TodoReturn uploadMessageFinished(int);
 	virtual TodoReturn uploadMessageFailed(int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn textInputShouldOffset(CCTextInputNode*, float);
 	virtual TodoReturn textInputReturn(CCTextInputNode*);
 }
@@ -4902,7 +4902,7 @@ class InfoLayer {
 	virtual TodoReturn setupPageInfo(gd::string, char const*);
 	virtual TodoReturn commentUploadFinished(int);
 	virtual TodoReturn updateUserScoreFinished();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -5037,7 +5037,7 @@ class LevelBrowserLayer {
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn setupPageInfo(gd::string, char const*);
 	virtual void onBack(cocos2d::CCObject* sender);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -5282,7 +5282,7 @@ class LevelInfoLayer {
 	virtual TodoReturn levelDeleteFailed(int);
 	virtual TodoReturn rateLevelClosed();
 	virtual TodoReturn likedItem(LikeItemType, int, bool);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -5357,7 +5357,7 @@ class LevelSearchLayer {
 	virtual TodoReturn textInputOpened(CCTextInputNode*);
 	virtual TodoReturn textInputClosed(CCTextInputNode*);
 	virtual void textChanged(CCTextInputNode*);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -5432,7 +5432,7 @@ class LevelSettingsLayer {
 	virtual TodoReturn customSongLayerClosed();
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn selectArtClosed(SelectArtLayer*);
 }
 
@@ -5730,7 +5730,7 @@ class MenuLayer {
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn googlePlaySignedIn();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -5766,7 +5766,7 @@ class MessagesProfilePage {
 
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
@@ -6109,7 +6109,7 @@ class OptionsLayer {
 
 	virtual TodoReturn customSetup();
 	virtual TodoReturn layerHidden();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -6812,7 +6812,7 @@ class ProfilePage {
 	virtual void registerWithTouchDispatcher();
 	virtual void keyBackClicked();
 	virtual TodoReturn show();
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 	virtual TodoReturn updateUserScoreFinished();
 	virtual TodoReturn updateUserScoreFailed();
 	virtual TodoReturn getUserInfoFinished(GJUserScore*);
@@ -7027,7 +7027,7 @@ class SecretLayer {
 	virtual TodoReturn textInputOpened(CCTextInputNode*);
 	virtual TodoReturn textInputClosed(CCTextInputNode*);
 	virtual void textChanged(CCTextInputNode*);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
@@ -7714,7 +7714,7 @@ class SupportLayer {
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
-	virtual TodoReturn FLAlert_Clicked(FLAlertLayer*, bool);
+	virtual void FLAlert_Clicked(FLAlertLayer*, bool);
 }
 
 [[link(android)]]
