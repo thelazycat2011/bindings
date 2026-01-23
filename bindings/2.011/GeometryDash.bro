@@ -5696,7 +5696,7 @@ class MenuGameLayer {
 }
 
 [[link(android)]]
-class MenuLayer {
+class MenuLayer : cocos2d::CCLayer {
 	// virtual ~MenuLayer();
 
 	TodoReturn endGame();
@@ -5709,7 +5709,7 @@ class MenuLayer {
 	void onGameCenter(cocos2d::CCObject* sender);
 	void onGarage(cocos2d::CCObject* sender);
 	void onGooglePlayGames(cocos2d::CCObject* sender);
-	void onMoreGames(cocos2d::CCObject* sender);
+	void onMoreGames(cocos2d::CCObject* sender) = win 0x11e230;
 	void onMyProfile(cocos2d::CCObject* sender);
 	void onNewgrounds(cocos2d::CCObject* sender);
 	void onOptions(cocos2d::CCObject* sender);
@@ -5730,7 +5730,7 @@ class MenuLayer {
 	TodoReturn updateUserProfileButton();
 	TodoReturn willClose();
 
-	virtual bool init();
+	virtual bool init() = win 0x11cf60;
 	virtual void keyBackClicked();
 	virtual void keyDown(cocos2d::enumKeyCodes);
 	virtual TodoReturn googlePlaySignedIn();
